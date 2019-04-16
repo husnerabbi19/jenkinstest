@@ -9,7 +9,7 @@ pipeline {
     stage('TEST') {
       steps {
         sh 'echo "Hello"'
-        emailext(subject: '$DEFAULT_SUBJECT', body: '$DEFAULT_CONTENT', from: 'watchgrafana@gmail.com', to: 'husne.rabbi@emumba.com')
+        emailext(subject: '$DEFAULT_SUBJECT', body: '$DEFAULT_CONTENT', from: 'watchgrafana@gmail.com', to: '[[$class: \'DevelopersRecipientProvider\'], [$class: \'RequesterRecipientProvider\']]')
       }
     }
   }
