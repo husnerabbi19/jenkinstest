@@ -9,7 +9,7 @@ pipeline {
     stage('TEST') {
       steps {
         sh 'echo "Hello"'
-        emailext(subject: '$DEFAULT_SUBJECT', body: '"${env.BUILD_URL} has result ${currentBuild.result}"', from: 'watchgrafana@gmail.com', to: 'husne.rabbi@emumba.com')
+        emailext(subject: '$DEFAULT_SUBJECT', body: '$DEFAULT_CONTENT', from: 'watchgrafana@gmail.com', to: 'husne.rabbi@emumba.com')
       }
     }
   }
